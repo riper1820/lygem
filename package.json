@@ -6,6 +6,7 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "turbo format",
+    "changeset": "npx @changesets/cli",
     "postinstall": "lefthook install"
   },
   "engines": {
@@ -15,6 +16,7 @@
   "workspaces": ["apps/*", "packages/*"],
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "@changesets/cli": "^2.27.12",
     "lefthook": "^1.10.10",
     "syncpack": "^13.0.2",
     "turbo": "^2.4.0"
