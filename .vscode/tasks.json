@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "dev",
+      "command": "npx",
+      "type": "shell",
+      "args": ["turbo", "dev"],
+      "isBackground": true,
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "presentation": {
+        "reveal": "never",
+        "revealProblems": "never",
+        "panel": "dedicated",
+        "showReuseMessage": true
+      }
+    }
+  ]
+}

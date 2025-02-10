@@ -1,0 +1,30 @@
+{
+  "name": "dev",
+  "dockerComposeFile": ["compose.yml"],
+  "service": "dev",
+  "workspaceFolder": "/workspace",
+  "shutdownAction": "stopCompose",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "biomejs.biome",
+        "vitest.explorer",
+        "bradlc.vscode-tailwindcss",
+        "-dbaeumer.vscode-eslint",
+        "Vercel.turbo-vsc",
+        "astro-build.astro-vscode"
+      ]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils": {},
+    "ghcr.io/devcontainers/features/git": {},
+    "ghcr.io/devcontainers-extra/features/go-task:1": {}
+  },
+  "remoteUser": "node",
+  "onCreateCommand": "/bin/bash .devcontainer/on-create.sh",
+  "remoteEnv": {
+    "NPM_CONFIG_PREFIX": "/home/node/.npm-global",
+    "PATH": "${containerEnv:PATH}:/home/node/.npm-global/bin"
+  }
+}

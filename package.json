@@ -1,0 +1,22 @@
+{
+  "name": "lygem",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "turbo format",
+    "postinstall": "lefthook install"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "npm@10.9.0",
+  "workspaces": ["apps/*", "packages/*"],
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "lefthook": "^1.10.10",
+    "syncpack": "^13.0.2",
+    "turbo": "^2.4.0"
+  }
+}

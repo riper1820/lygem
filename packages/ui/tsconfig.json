@@ -1,0 +1,10 @@
+{
+  "extends": "@lygem/typescript-config/react-library.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "paths": {
+      "#*": ["./src/*"] // for import path completion
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}

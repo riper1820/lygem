@@ -1,0 +1,25 @@
+name: "lygem-dev"
+services:
+  dev:
+    volumes:
+      - type: bind
+        source: ..
+        target: /workspace
+      - type: volume
+        source: npm-global
+        target: /home/node/.npm-global
+      - type: volume
+        source: npm-cache
+        target: /home/node/.npm
+      - type: volume
+        source: node-modules-root
+        target: /workspace/node_modules
+    image: mcr.microsoft.com/devcontainers/typescript-node:22-bookworm
+    environment:
+      NPM_CONFIG_PREFIX: /home/node/.npm-global
+    tty: true
+
+volumes:
+  npm-global:
+  npm-cache:
+  node-modules-root:

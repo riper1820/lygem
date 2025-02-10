@@ -1,0 +1,10 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - name: biome
+      run: npx biome check --write {staged_files}
+    - name: syncpack 
+      run: npx syncpack fix-mismatches
+      stage_fixed: true
+    - name: tsc
+      run: npx turbo check-types
