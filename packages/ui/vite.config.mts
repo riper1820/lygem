@@ -7,7 +7,6 @@ export default defineConfig({
   plugins: [tailwindcss(), react()],
   test: {
     environment: "happy-dom",
-    watch: false,
     passWithNoTests: true,
   },
 })
