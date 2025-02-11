@@ -1,1 +1,0 @@
-# 💎LyGem Generator

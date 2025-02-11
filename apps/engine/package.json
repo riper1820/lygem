@@ -1,5 +1,5 @@
 {
-  "name": "@lygem/generator",
+  "name": "@lygem/engine",
   "type": "module",
   "version": "0.0.1",
   "imports": {
