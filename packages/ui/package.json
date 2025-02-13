@@ -24,6 +24,7 @@
     "test:watch": "vitest watch",
     "build": "tsup"
   },
+  "files": ["dist"],
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.4",
     "@lygem/tailwind-config": "0.1.0",
