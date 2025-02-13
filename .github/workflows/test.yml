@@ -1,0 +1,60 @@
+name: Test
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - frontend/**
+      - .github/workflows/ci-frontend.yml
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: frontend
+    shell: bash
+
+jobs:
+  test:
+    permissions:
+      pull-requests: write
+      contents: write
+      checks: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Tests
+        run: npm test
+        continue-on-error: true
+      
+      - name: Vitest Coverage Report (@lygem/ui)
+        uses: davelosert/vitest-coverage-report-action@v2
+        if: always()
+        with:
+          working-directory: "./packages/ui"
+          name: "@lygem/ui"
+      
+      - name: Vitest Coverage Report (@lygem/engine)
+        uses: davelosert/vitest-coverage-report-action@v2
+        if: always()
+        with:
+          working-directory: "./packages/engine"
+          name: "@lygem/engine"
+      
