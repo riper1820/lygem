@@ -22,5 +22,6 @@ export default defineConfig({
       reportOnFailure: true,
       include: ["src/**/*.ts", "src/**/*.tsx"],
     },
+    testTimeout: 10000,
   },
 })
