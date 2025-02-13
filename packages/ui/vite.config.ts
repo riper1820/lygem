@@ -8,5 +8,11 @@ export default defineConfig({
   test: {
     environment: "happy-dom",
     passWithNoTests: true,
+    coverage: {
+      reporter: ["json-summary", "json", "text"],
+      reportOnFailure: true,
+      include: ["src/**/*.ts", "src/**/*.tsx"],
+      exclude: ["src/**/*.stories.tsx", "src/index.ts"],
+    },
   },
 })
