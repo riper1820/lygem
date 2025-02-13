@@ -9,6 +9,7 @@
     "test": "turbo test",
     "test:watch": "turbo test:watch",
     "changeset": "npx @changesets/cli",
+    "publish-packages": "turbo run build lint format test && changeset version && changeset publish",
     "postinstall": "lefthook install"
   },
   "engines": {
