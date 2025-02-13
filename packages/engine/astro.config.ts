@@ -9,6 +9,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-
+  outDir: "./astroDist",
   integrations: [react()],
 })
