@@ -1,7 +1,7 @@
 {
   "name": "@lygem/engine",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "imports": {
     "#*": ["./src/*", "./src/*.ts", "./src/*.tsx"]
   },
@@ -26,9 +26,9 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.2.0",
-    "@lygem/tailwind-config": "0.0.0",
-    "@lygem/typescript-config": "0.0.0",
-    "@lygem/ui": "0.0.0",
+    "@lygem/tailwind-config": "0.1.0",
+    "@lygem/typescript-config": "0.1.0",
+    "@lygem/ui": "0.1.0",
     "@tailwindcss/vite": "^4.0.6",
     "astro": "^5.2.5",
     "commander": "^13.1.0",
