@@ -1,10 +1,9 @@
 import { readFile } from "node:fs/promises"
-import { type Config, configSchema } from "#lib/schema"
+import { type PageConfig, pageConfigSchema } from "#lib/schema"
 
-export const readConfig = async (
-  configPath = "./examples/schema.json",
-): Promise<Config> => {
-  const configStr = await readFile(configPath, "utf-8")
+export const readConfig = async (configPath?: string): Promise<PageConfig> => {
+  const defaultConfigPath = "./examples/schema.json"
+  const configStr = await readFile(configPath ?? defaultConfigPath, "utf-8")
   const config = JSON.parse(configStr)
-  return configSchema.parse(config)
+  return pageConfigSchema.parse(config)
 }

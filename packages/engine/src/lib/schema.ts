@@ -10,9 +10,9 @@ const linkConfigSchema = z.object({
   iconSrc: z.string().nullish(),
 })
 
-export const configSchema = z.object({
+export const pageConfigSchema = z.object({
   meta: metaConfigSchema,
   links: z.array(linkConfigSchema).nullish(),
 })
 
-export type Config = z.infer<typeof configSchema>
+export type PageConfig = z.infer<typeof pageConfigSchema>
