@@ -3,6 +3,7 @@ pre-commit:
   jobs:
     - name: biome
       run: npx biome check --write {staged_files}
+      glob: "*.{js,ts,jsx,tsx,json}"
     - name: syncpack 
       run: npx syncpack fix-mismatches
       stage_fixed: true
