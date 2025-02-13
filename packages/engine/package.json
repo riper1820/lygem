@@ -15,7 +15,7 @@
   "bin": {
     "lygem-engine": "./dist/index.js"
   },
-  "files": ["dist"],
+  "files": ["dist", "src", "astro.config.ts"],
   "scripts": {
     "dev": "astro dev --host",
     "build": "tsup src/cli/index.ts --format cjs,esm --dts",
