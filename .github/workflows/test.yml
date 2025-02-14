@@ -15,7 +15,6 @@ concurrency:
 
 defaults:
   run:
-    working-directory: frontend
     shell: bash
 
 jobs:
