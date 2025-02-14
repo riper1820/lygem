@@ -5,8 +5,9 @@ on:
     branches:
       - main
     paths:
-      - frontend/**
-      - .github/workflows/ci-frontend.yml
+      - apps/**
+      - packages/**
+      - .github/workflows/test.yml
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
