@@ -1,7 +1,7 @@
 ---
+import { Avatar } from "@lygem/ui"
 import Layout from "#layouts/Layout.astro"
 import { readConfig } from "#lib/config.js"
-import { Avatar } from "@lygem/ui"
 const configPath = import.meta.env.LYGEM_CONFIG_PATH
 const config = await readConfig(configPath)
 ---

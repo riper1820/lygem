@@ -28,6 +28,13 @@
     }
   },
   "files": {
-    "ignore": ["**/node_modules/**", "**/.astro/**", "**/.turbo/**", "**/dist/**", "**/coverage/**", "**/tmp/**"]
+    "ignore": [
+      "**/node_modules/**",
+      "**/.astro/**",
+      "**/.turbo/**",
+      "**/dist/**",
+      "**/coverage/**",
+      "**/tmp/**"
+    ]
   }
 }
