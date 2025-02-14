@@ -5,8 +5,9 @@ on:
     branches:
       - main
     paths:
-      - frontend/**
-      - .github/workflows/ci-frontend.yml
+      - apps/**
+      - packages/**
+      - .github/workflows/test.yml
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -14,7 +15,6 @@ concurrency:
 
 defaults:
   run:
-    working-directory: frontend
     shell: bash
 
 jobs:
@@ -33,7 +33,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 22.14.0
           cache: npm
           cache-dependency-path: package-lock.json
 
