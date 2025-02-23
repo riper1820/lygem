@@ -16,27 +16,6 @@
         "panel": "dedicated",
         "showReuseMessage": true
       }
-    },
-    {
-      "label": "storybook",
-      "type": "shell",
-      "command": "npm",
-      "args": ["run", "storybook"],
-      "isBackground": true,
-      "runOptions": {
-        "runOn": "folderOpen"
-      },
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": false,
-        "panel": "shared",
-        "showReuseMessage": true,
-        "clear": false
-      },
-      "options": {
-        "cwd": "${workspaceFolder}/packages/ui"
-      }
     }
   ]
 }
