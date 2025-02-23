@@ -7,6 +7,9 @@
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["dist/**"]
     },
+    "build:storybook": {
+      "outputs": ["storybook-static/**"]
+    },
     "lint": {},
     "format": {},
     "dev": {
@@ -16,10 +19,8 @@
     "check-types": {
       "dependsOn": ["^check-types"]
     },
-    "test": {},
-    "test:watch": {
-      "cache": false,
-      "persistent": true
+    "test": {
+      "dependsOn": ["build:storybook"]
     }
   }
 }

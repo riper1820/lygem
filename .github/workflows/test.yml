@@ -39,10 +39,12 @@ jobs:
 
       - name: Install Dependencies
         run: npm ci
+      
+      - name: Install Playwright
+        run: npx playwright install --with-deps
 
       - name: Run Tests
         run: npm test
-        continue-on-error: true
       
       - name: Vitest Coverage Report (@lygem/ui)
         uses: davelosert/vitest-coverage-report-action@v2
