@@ -22,6 +22,7 @@
     "storybook": "storybook dev",
     "test": "vitest run --coverage",
     "test:watch": "vitest watch",
+    "test:storybook": "test-storybook",
     "build": "tsup"
   },
   "files": ["dist"],
@@ -36,7 +37,9 @@
     "@storybook/react": "^8.5.3",
     "@storybook/react-vite": "^8.5.3",
     "@storybook/test": "^8.5.3",
+    "@storybook/test-runner": "^0.21.3",
     "@tailwindcss/vite": "^4.0.6",
+    "@testing-library/react": "^16.2.0",
     "@turbo/gen": "^2.4.0",
     "@types/node": "^22.13.4",
     "@types/react": "^18.0.0",
