@@ -23,7 +23,7 @@
     "test": "npm run test:vitest && npm run test:storybook",
     "test:vitest": "vitest run --coverage",
     "test:vitest:watch": "vitest watch",
-    "test:storybook": "concurrently -k -s first -n \"storybook,test\" \"npx http-server storybook-static --port 9009 --silent\" \"wait-on tcp:9009 && test-storybook\"",
+    "test:storybook": "concurrently -k -s first -n \"storybook,test\" \"npx http-server storybook-static --port 9009 --silent\" \"wait-on tcp:9009 && test-storybook --url http://127.0.0.1:9009\"",
     "test:storybook:watch": "echo \"If test process is not running, check that it is running on port 6006\" && wait-on tcp:6006 && test-storybook --watch",
     "build": "tsup",
     "build:storybook": "storybook build"
