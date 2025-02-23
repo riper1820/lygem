@@ -4,6 +4,7 @@ updates:
     directory: /
     schedule:
       interval: daily
+    open-pull-requests-limit: 0
 
   - package-ecosystem: npm
     directory: /
@@ -31,3 +32,4 @@ updates:
           - "react-dom"
           - "@types/react"
           - "@types/react-dom"
+    open-pull-requests-limit: 0
