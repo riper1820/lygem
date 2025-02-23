@@ -12,9 +12,14 @@ services:
         source: npm-cache
         target: /home/node/.npm
       - type: volume
+        source: cache
+        target: /home/node/.cache
+      - type: volume
         source: node-modules-root
         target: /workspace/node_modules
-    image: mcr.microsoft.com/devcontainers/typescript-node:22-bookworm
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
     environment:
       NPM_CONFIG_PREFIX: /home/node/.npm-global
     tty: true
@@ -23,3 +28,4 @@ volumes:
   npm-global:
   npm-cache:
   node-modules-root:
+  cache:
