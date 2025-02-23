@@ -17,18 +17,14 @@
     "format": "biome format .",
     "generate:component": "turbo gen react-component",
     "check-types": "tsc --noEmit",
-
-    "dev": "concurrently --kill-others \"npm run dev:tsup\" \"npm run dev:storybook\"",
+    "dev": "concurrently -k -n \"tsup,storybook\"  \"npm run dev:tsup\" \"npm run dev:storybook\"",
     "dev:tsup": "tsup --watch",
     "dev:storybook": "storybook dev --ci -p 6006",
-
-    "test": "concurrently --kill-others \"npm run vitest\" \"npm run test-storybook\"",
-    "test:watch": "concurrently --kill-others \"npm run vitest:watch\" \"npm run test-storybook:watch\"",
-    "vitest": "vitest run --coverage",
-    "vitest:watch": "vitest watch",
-    "test-storybook": "test-storybook",
-    "test-storybook:watch": "npm run dev:storybook & test-storybook --watch",
-
+    "test": "npm run test:vitest && npm run test:storybook",
+    "test:vitest": "vitest run --coverage",
+    "test:vitest:watch": "vitest watch",
+    "test:storybook": "concurrently -k -s first -n \"storybook,test\" \"npx http-server storybook-static --port 9009 --silent\" \"wait-on tcp:9009 && test-storybook\"",
+    "test:storybook:watch": "echo \"If test process is not running, check that it is running on port 6006\" && wait-on tcp:6006 && test-storybook --watch",
     "build": "tsup",
     "build:storybook": "storybook build"
   },
@@ -56,6 +52,7 @@
     "concurrently": "^9.1.2",
     "daisyui": "^5.0.0-beta.6",
     "happy-dom": "^17.0.2",
+    "http-server": "^14.1.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "storybook": "^8.5.3",
@@ -63,7 +60,8 @@
     "tsup": "^8.3.6",
     "typescript": "^5.7.3",
     "vite": "^6.1.0",
-    "vitest": "^3.0.5"
+    "vitest": "^3.0.5",
+    "wait-on": "^8.0.2"
   },
   "peerDependencies": {
     "daisyui": "^5.0.0-beta.6",
