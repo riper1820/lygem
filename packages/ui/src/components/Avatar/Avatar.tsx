@@ -6,8 +6,9 @@ export type AvatarProps = {
 }
 
 export const Avatar = (props: AvatarProps) => {
-  const baseStyles = "w-full max-w-50 rounded-full"
-  const clickableStyles = "hover:brightness-75 cursor-pointer transition-all"
+  const baseStyles = "w-full rounded-full"
+  const clickableStyles =
+    "hover:brightness-75 cursor-pointer scale-hovering transition-all"
   const styles = props.isClickable
     ? `${baseStyles} ${clickableStyles}`
     : baseStyles
