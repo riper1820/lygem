@@ -1,41 +1,12 @@
 @import "tailwindcss";
-@plugin "daisyui";
-
-.component {
-  @apply bg-component text-on-component hover:bg-component-hover active:bg-component-active;
+@plugin "daisyui" {
+  themes: light --default;
 }
 
-.flat {
-  @apply border-2 border-primary shadow-none;
+.scale-hovering {
+  @apply transition-transform hover:scale-101 active:scale-99;
 }
 
-.paper {
-  @apply shadow-md hover:shadow-lg active:shadow-sm;
-}
-
-.paper-clickable {
-  @apply hover:scale-101 active:scale-99;
-}
-
-.on-wallpaper {
-  background-color: transparent;
-  color: var(--color-on-wallpaper);
-}
-
-:root {
-  --lg-color-component: var(--color-white);
-  --lg-color-component-hover: var(--color-slate-200);
-  --lg-color-component-active: var(--color-slate-300);
-  --lg-color-on-component: var(--color-slate-900);
-  --lg-color-on-wallpaper: var(--color-slate-900);
-  --lg-color-primary: var(--color-cyan-400);
-}
-
-@theme {
-  --color-component: var(--lg-color-component);
-  --color-component-hover: var(--lg-color-component-hover);
-  --color-component-active: var(--lg-color-component-active);
-  --color-on-component: var(--lg-color-on-component);
-  --color-on-wallpaper: var(--lg-color-on-wallpaper);
-  --color-primary: var(--lg-color-primary);
+.shadow-scale-hovering {
+  @apply transition-transform  hover:scale-101 active:scale-99 shadow-md hover:shadow-lg active:shadow-sm;
 }

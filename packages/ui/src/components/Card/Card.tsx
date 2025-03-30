@@ -12,14 +12,14 @@ export type CardProps = {
 
 export const Card = (props: CardProps) => {
   const variantClassNameMap = {
-    flat: "flat",
-    paper: "paper paper-clickable",
+    flat: "card-border",
+    paper: "shadow-scale-hovering",
   }
   const variantClassName = variantClassNameMap[props.variant]
   return (
     <a href={props.href}>
       <div
-        className={`card flex flex-row content-center items-center p-2 transition ${variantClassName} component`}
+        className={`card card-xs hover:bg-base-200 active:bg-base-300 flex flex-row content-center items-center p-2 transition ${variantClassName}`}
       >
         <div className={"size-16"}>
           <Icon name={props.iconName} outlined={props.iconOutlined} />
