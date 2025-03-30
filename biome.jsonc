@@ -34,7 +34,8 @@
       "**/.turbo/**",
       "**/dist/**",
       "**/coverage/**",
-      "**/tmp/**"
+      "**/tmp/**",
+      "global.css"
     ]
   }
 }
