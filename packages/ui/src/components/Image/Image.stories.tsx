@@ -39,3 +39,24 @@ export const ContainedPaper: Story = {
     aspectRatio: "16:9",
   },
 }
+
+export const FlatWithHref: Story = {
+  args: {
+    src: "https://placehold.co/1000",
+    alt: "Placeholder Image",
+    variant: "flat",
+    fit: "cover",
+    aspectRatio: "16:9",
+    href: "https://example.com",
+  },
+}
+export const PaperWithHref: Story = {
+  args: {
+    src: "https://placehold.co/1000",
+    alt: "Placeholder Image",
+    variant: "paper",
+    fit: "cover",
+    aspectRatio: "16:9",
+    href: "https://example.com",
+  },
+}
